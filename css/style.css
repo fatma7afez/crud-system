@@ -1,0 +1,45 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    overflow-y: hidden;
+}
+
+.crud-system ,.crud-table {background-color: #fff;}
+
+.crud-system label , .crud-table thead {color: #217213; font-size: 18px;}
+
+.point {cursor: pointer;}
+
+
+#updateproductBtn ,  #productNameAlert , #ProductCategoryAlert , #ProductPriceAlert ,#ProductDescriptionAlert{
+    display: none;
+}
+/******************* loading screen **************/
+#loading{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(16, 39, 15);
+    z-index:99999;
+    display: flex;
+}
+
+/******************* to top ****************/
+#btnUp{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+}
+
+
+
+/******************* media query ****************/
+@media (max-width:992px)
+{
+    .crud-system,
+    .crud-table {width: 100% !important;}
+
+
+}

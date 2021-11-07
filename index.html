@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>Crud System</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <meta name="author" content="fatma hafez" />
+    <meta
+      name="description"
+      content="crud system how add , display ,update and delete data"
+    />
+    <meta
+      name="keywords"
+      content="html,css,js,jQuery,local server,products and validation"
+    />
+
+    <!-- icon  -->
+    <link rel="icon" href="img/2559486.png" />
+
+    <!-- Fontawesome Link -->
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Bootstrap Link -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Page Style Link -->
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- font style Link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-------------- loading screen ----------------------- -->
+    <section id="loading" class="justify-content-center align-items-center">
+      <i class="fas fa-spinner text-white fa-3x fa-spin" id="spinner"></i>
+    </section>
+
+    <!-------------- header ----------------------- -->
+
+    <header class="logo text-center">
+      <img
+        src="img/70a5a28358a0f80718ac4f6737f018ae.png"
+        alt="logo"
+        width="180px"
+      />
+    </header>
+    <!-------------- crud-system ----------------------- -->
+
+    <section class="crud-system mx-auto w-75">
+      <div class="crud-system w-75 mx-auto my-3 p-4 shadow rounded">
+        <div class="mb-3">
+          <label for="ProductName" class="form-label"
+            >Product Name<span class="text-danger fs-4">*</span></label
+          >
+          <input type="text" class="form-control system" id="ProductName" />
+          <div class="alert alert-danger" id="productNameAlert">
+            Product Name is capital , min 3 and max 5
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="ProductCategory" class="form-label"
+            >Product Category<span class="text-danger fs-4">*</span></label
+          >
+          <input type="text" class="form-control system" id="ProductCategory" />
+          <div class="alert alert-danger" id="ProductCategoryAlert">
+            Product category is capital , min 3 and max 8
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="ProductPrice" class="form-label"
+            >Product Price<span class="text-danger fs-4">*</span></label
+          >
+          <input type="text" class="form-control system" id="ProductPrice" />
+          <div class="alert alert-danger" id="ProductPriceAlert">
+            Product Price must be in range 100 : 10,000 (Numbers Only)
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="ProductDescription" class="form-label"
+            >Product Description<span class="text-danger fs-4">*</span></label
+          >
+          <textarea
+            id="ProductDescription"
+            cols="10"
+            rows="4"
+            class="form-control system"
+          ></textarea>
+
+          <div class="alert alert-danger" id="ProductDescriptionAlert">
+            Product Description must contain minimum 3 letters, Can't contain
+            special characters
+          </div>
+        </div>
+        <div class="mb-3" id="submitSection" >
+          <button
+            type="submit"
+            class="btn btn-success float-end"
+            id="addProductBtn"
+            disabled
+          >
+            Submit
+          </button>
+        </div>
+        <div class="mb-3">
+          <button
+            type="submit"
+            class="btn btn-success float-end"
+            id="updateproductBtn"
+            disabled
+          >
+            update
+          </button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </section>
+
+    <!-------------- crud-table ----------------------- -->
+
+    <div class="crud-table w-75 mx-auto my-3 p-4 shadow rounded" >
+      <input
+        type="search"
+        id="searchBar"
+        class="form-control"
+        placeholder="search......."
+      />
+      <div class="table-responsive my-3">
+        <table class="table crud-table">
+          <thead class="text-center table-hover w-100">
+            <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Category</td>
+              <td>Price</td>
+              <td>Description</td>
+              <td>Updated</td>
+              <td>Deleted</td>
+            </tr>
+          </thead>
+          <tbody class="text-center py-3" id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-------------- to top ----------------------- -->
+    <button id="btnUp" class="btn btn-success text whitr rounded-circle p-2" >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JQuery Link -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- bundle Link -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Page Main Script Link -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
